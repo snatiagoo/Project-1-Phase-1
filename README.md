@@ -4,7 +4,7 @@ General idea → a work friction logger
 
 A calendar based (not visible calendar, but rather date based) note organizer with several note titles which represent a work friction, which include inforamtion about what the problem is and how to fix it, dates to fix, actions to do, whatever. Like a note app but for work. 
 
-A logged user can create and delete friction entries, with title, date, description, to-do area and an optional date for the to-do. 
+A logged user can create and delete friction entries, with date and description.
 
 Nothing more than that, basic UI and thats it.
 
