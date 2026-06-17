@@ -1,6 +1,5 @@
 
 
-
-export default function dashboard(){
+export default function Dashboard(){
     
 }
