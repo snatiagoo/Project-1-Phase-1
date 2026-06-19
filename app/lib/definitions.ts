@@ -1,6 +1,7 @@
 
 export type frictionLog = {
-    id: string,
+    id: number,
+    userid: string
     title: string,
     description: string, 
     date: string,

@@ -1,17 +1,19 @@
 'use server';
 import { z } from 'zod';
 import postgres from 'postgres';
+import { auth } from '@clerk/nextjs/server';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 const FormSchema = z.object({
-    id: z.string(),
+    id: z.number(),
+    userid: z.string(),
     title: z.string(),
     description: z.string(),
     date: z.string()
 });
 
-const CreateLog = FormSchema.omit({id:true, date:true}); // fields the user doenst complete himself but are compelted automatically
+const CreateLog = FormSchema.omit({id:true, userid:true, date:true}); // fields the user doenst complete himself but are compelted automatically
 
 export async function createLog (formData: FormData){
     const { title, description } = CreateLog.parse({
@@ -21,9 +23,10 @@ export async function createLog (formData: FormData){
     });
      
     const date = new Date().toISOString().split('T')[0];
+    const { userId: userid } = await auth();
 
    await sql`
-    INSERT INTO frictionLogs (title, description, date)
-    VALUES (${title}, ${description}, ${date})
+    INSERT INTO friction_logs (userid, title, description, date)
+    VALUES (${userid}, ${title}, ${description}, ${date})
   `;
 }
