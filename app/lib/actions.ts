@@ -2,6 +2,7 @@
 import { z } from 'zod';
 import postgres from 'postgres';
 import { auth } from '@clerk/nextjs/server';
+import { redirect } from 'next/navigation'
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
@@ -29,4 +30,6 @@ export async function createLog (formData: FormData){
     INSERT INTO friction_logs (userid, title, description, date)
     VALUES (${userid}, ${title}, ${description}, ${date})
   `;
+
+  redirect('/dashboard')
 }
