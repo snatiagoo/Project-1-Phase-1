@@ -14,7 +14,7 @@ Necessary:
 
 1. LOG IN → Clerk
 2. UI DESIGN → Nextjs → buttons, cards when creating an entry, entry page, etc. It has to vary when creating/deleting/editing a new entry.
-3. Functionality of UI → Nextjs → link pages, create/delete/edit entry.
+3. Functionality of UI → Nextjs → link pages, create/delete entry.
 4. DATABASE (fetching and storing) → Neon postgres
 5. DEPLOYMENT → Vercel
 
