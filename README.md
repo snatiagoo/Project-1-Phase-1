@@ -24,3 +24,5 @@ Slice 1 — Auth only. Add Clerk, get sign-up / log-in working, show a blank "yo
 Slice 2 — One record, create + display. Neon schema for your one table, a form to add one item, display the list. Push, deploy, confirm live.
 Slice 3 — Finish CRUD. Edit and delete. Scope to current user only. Push, deploy.
 Each slice on its own branch: git checkout -b feat/auth, work, commit, push, PR-to-self, merge, git checkout main, git pull. The Git reference toggle on your Phase 1 page has the exact commands if you blank on them.
+
+https://project-1-phase-1-snatiagoos-projects.vercel.app?_vercel_share=kDy9OUCTpicOuG9x3v950PpeMQzTQvzG
