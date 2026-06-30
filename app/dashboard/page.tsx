@@ -1,26 +1,21 @@
+import { getFrictionData } from '@/app/lib/data';
+import DashboardComponent from '../ui/dashboard-component';
 import { auth } from '@clerk/nextjs/server';
+import { frictionLogData } from '../lib/definitions';
+
 
 
 
 export default async function Dashboard(){
 
     const { userId: userid } = await auth();
-
+    const data: frictionLogData[] = await getFrictionData(userid);
     return(
         <main>
-            <h1>Welcome to your dashboard! What happened today?</h1>
-
-            <div> 
-
-                a
-
-            </div>
-
-            <button className="">
-                +
-            </button>
+            <DashboardComponent frictionData={data}/>
         </main>
-
-
+        
     )    
 }
+
+
